@@ -156,8 +156,13 @@ end
 
 def team_names
   teams_array =[]
+<<<<<<< HEAD
   game_hash.each { |team, team_attr| 
     team_attr.each { |attr, values| 
+=======
+  game_hash.each { |team, team_attr| #puts "#{team} & #{team_attr},"
+    team_attr.each { |attr, values| #puts "#{attr} & #{values},"
+>>>>>>> aa6e40815520fe32a908e2bc7ff2533ace863b5d
       if attr == :team_name 
          teams_array<< values
       end}
@@ -179,6 +184,7 @@ end
 def player_numbers(team_name)
   jersey_numbers =[]
   game_hash.each { |team, team_attr| 
+<<<<<<< HEAD
     team_attr.each { |attr, values| 
       if values == team_name
         (game_hash[team][:players]).each { |name, stats| 
@@ -191,6 +197,16 @@ def player_numbers(team_name)
       end
     }
   }
+=======
+    team_attr.each { |attr, values| if values == team_name
+                                      (game_hash[team][:players]).each { |name, stats| 
+                                          stats.each { |key, val| if key == :number
+                                                                    jersey_numbers << val
+                                                                  end 
+                                                      }}
+                                    end
+                      }}
+>>>>>>> aa6e40815520fe32a908e2bc7ff2533ace863b5d
   jersey_numbers
 end
 
